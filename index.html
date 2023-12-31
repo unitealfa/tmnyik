@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation entre Frames</title>
+    
+    
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.wallpapersden.com/image/download/topography-abstract-black-texture_a2lmZmiUmZqaraWkpJRobWllrWdma2U.jpg');
+            background-size: cover;
+        }
+
+
+        
+        .frame {
+            border: 2px solid #333;
+            padding: 200px;
+            margin: 10px;
+            display: none;
+        }
+
+        .frame.active {
+            display: block;
+            background-color: #fff;
+        }
+
+        nav {
+            margin: 10px
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            background-color: #920d0d;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+
+
+
+            
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+    <nav>
+        <a href="#" onclick="showFrame('frame1')">Frame 1</a>
+        <a href="#" onclick="showFrame('frame2')">Frame 2</a>
+        <a href="#" onclick="showFrame('frame3')">Frame 3</a>
+        <a href="#" onclick="showFrame('frame4')">Frame 4</a>
+    </nav>
+
+
+    
+
+    <div id="frame1" class="frame active">
+        
+        <h1>YE</h1>
+    </div>
+
+    <div id="frame2" class="frame">
+        
+        <h1>DEK</h1>
+    </div>
+
+    <div id="frame3" class="frame">
+        
+        <h1>fiiiiiiiii</h1>
+    </div>
+
+    <div id="frame4" class="frame">
+        
+        <h1>iiiiiih</h1>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        function showFrame(frameId) {
+            // Masquer toutes les frames
+            var frames = document.querySelectorAll('.frame');
+            frames.forEach(function(frame) {
+                frame.classList.remove('active');
+            });
+
+            // Afficher la frame sélectionnée
+            var selectedFrame = document.getElementById(frameId);
+            selectedFrame.classList.add('active');
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>
